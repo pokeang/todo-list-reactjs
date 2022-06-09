@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import Todo from './page/Todo'
+import Header from './components/Header'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='ui container'>
+      <Router>
+        <Header title="Todo manager" />
+        <Switch></Switch>
+        <Route path="/" exact component={Todo}></Route>
+        <Route>404 Not Found!</Route>
+      </Router>
+      {/* <Todo /> */}
     </div>
   );
 }
