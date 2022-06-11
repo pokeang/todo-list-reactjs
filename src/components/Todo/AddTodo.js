@@ -7,7 +7,7 @@ class AddTodo extends React.Component {
 
     add = (e) => {
         e.preventDefault()
-        if (this.state.name == "") {
+        if (this.state.name === "") {
             alert("name is require")
             return
         }
